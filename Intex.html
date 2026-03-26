@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QTF Capital | Elite Futures Trading</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; scroll-behavior: smooth; }
+        .gold-glow { text-shadow: 0 0 10px rgba(212, 175, 55, 0.8), 0 0 20px rgba(212, 175, 55, 0.4); }
+        .text-gold { color: #D4AF37; }
+        .bg-gold { background-color: #D4AF37; }
+        .border-gold { border-color: #D4AF37; }
+        .neon-box { border: 1px solid rgba(212, 175, 55, 0.2); transition: 0.3s; }
+        .neon-box:hover { border-color: #D4AF37; box-shadow: 0 0 20px rgba(212, 175, 55, 0.2); }
+        details summary::-webkit-details-marker { display:none; }
+        summary { list-style: none; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 bg-black/80 backdrop-blur-md border-b border-zinc-800 py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <h1 class="text-2xl font-bold tracking-tighter gold-glow">QTF<span class="text-white">CAPITAL</span></h1>
+            <div class="space-x-8 hidden md:flex text-xs font-bold uppercase tracking-widest">
+                <a href="#plans" class="hover:text-gold transition">Plans</a>
+                <a href="#rules" class="hover:text-gold transition">Rules</a>
+                <a href="#faq" class="hover:text-gold transition">FAQ</a>
+                <a href="#contact" class="hover:text-gold transition">Contact</a>
+            </div>
+            <button class="bg-gold text-black px-6 py-2 text-xs font-black uppercase hover:bg-yellow-500 transition">Dashboard</button>
+        </div>
+    </nav>
+
+    <section id="plans" class="pt-32 pb-16 text-center">
+        <h2 class="text-4xl md:text-6xl font-black mb-4 uppercase">1-Step <span class="text-gold gold-glow">Evaluations</span></h2>
+        <p class="text-zinc-500 text-sm tracking-widest uppercase mb-12">Inspired by Apex, Topstep, & MFF Models</p>
+        
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div class="neon-box p-6 bg-zinc-950 rounded-lg">
+                <h4 class="text-xl font-bold mb-1">25K Account</h4>
+                <div class="text-gold text-2xl font-black mb-4">$150</div>
+                <ul class="text-[10px] uppercase space-y-2 text-zinc-400 mb-6 tracking-wider">
+                    <li>Target: $1,500</li>
+                    <li>Max Drawdown: $1,500</li>
+                    <li>3 Contracts Max</li>
+                </ul>
+                <button class="w-full py-2 bg-zinc-800 text-xs font-bold hover:bg-gold hover:text-black transition">PURCHASE</button>
+            </div>
+            <div class="neon-box p-6 bg-zinc-950 rounded-lg border-gold border-2 scale-105">
+                <h4 class="text-xl font-bold mb-1">50K Account</h4>
+                <div class="text-gold text-2xl font-black mb-4">$170</div>
+                <ul class="text-[10px] uppercase space-y-2 text-zinc-400 mb-6 tracking-wider">
+                    <li>Target: $3,000</li>
+                    <li>Max Drawdown: $2,000</li>
+                    <li>5 Contracts Max</li>
+                </ul>
+                <button class="w-full py-2 bg-gold text-black text-xs font-bold hover:bg-white transition">PURCHASE</button>
+            </div>
+            <div class="neon-box p-6 bg-zinc-950 rounded-lg">
+                <h4 class="text-xl font-bold mb-1">100K Account</h4>
+                <div class="text-gold text-2xl font-black mb-4">$310</div>
+                <ul class="text-[10px] uppercase space-y-2 text-zinc-400 mb-6 tracking-wider">
+                    <li>Target: $6,000</li>
+                    <li>Max Drawdown: $3,000</li>
+                    <li>12 Contracts Max</li>
+                </ul>
+                <button class="w-full py-2 bg-zinc-800 text-xs font-bold hover:bg-gold hover:text-black transition">PURCHASE</button>
+            </div>
+             <div class="neon-box p-6 bg-zinc-950 rounded-lg">
+                <h4 class="text-xl font-bold mb-1">150K Account</h4>
+                <div class="text-gold text-2xl font-black mb-4">$440</div>
+                <ul class="text-[10px] uppercase space-y-2 text-zinc-400 mb-6 tracking-wider">
+                    <li>Target: $9,000</li>
+                    <li>Max Drawdown: $4,500</li>
+                    <li>17 Contracts Max</li>
+                </ul>
+                <button class="w-full py-2 bg-zinc-800 text-xs font-bold hover:bg-gold hover:text-black transition">PURCHASE</button>
+            </div>
+             <div class="neon-box p-6 bg-zinc-950 rounded-lg">
+                <h4 class="text-xl font-bold mb-1">200K Account</h4>
+                <div class="text-gold text-2xl font-black mb-4">$550</div>
+                <ul class="text-[10px] uppercase space-y-2 text-zinc-400 mb-6 tracking-wider">
+                    <li>Target: $12,000</li>
+                    <li>Max Drawdown: $5,000</li>
+                    <li>25 Contracts Max</li>
+                </ul>
+                <button class="w-full py-2 bg-zinc-800 text-xs font-bold hover:bg-gold hover:text-black transition">PURCHASE</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-20 bg-zinc-950">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h3 class="text-3xl font-bold text-center mb-12 uppercase tracking-tighter">Frequently Asked <span class="text-gold">Questions</span></h3>
+            <div class="space-y-4">
+                <details class="group neon-box bg-black p-4 rounded-lg">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold uppercase text-sm">
+                        What is the profit split?
+                        <span class="text-gold group-open:rotate-180 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-zinc-400 text-sm leading-relaxed">We offer a 90/10 profit split. You keep 100% of your first $10,000 earned, and 90% of everything after that.</p>
+                </details>
+                <details class="group neon-box bg-black p-4 rounded-lg">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold uppercase text-sm">
+                        Is there a daily loss limit?
+                        <span class="text-gold group-open:rotate-180 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-zinc-400 text-sm leading-relaxed">Unlike other firms, we do not have a hard daily loss limit that fails your account. We use an End-of-Day (EOD) Drawdown model.</p>
+                </details>
+                <details class="group neon-box bg-black p-4 rounded-lg">
+                    <summary class="flex justify-between items-center cursor-pointer font-bold uppercase text-sm">
+                        When can I request a payout?
+                        <span class="text-gold group-open:rotate-180 transition-transform">+</span>
+                    </summary>
+                    <p class="mt-4 text-zinc-400 text-sm leading-relaxed">Payouts are processed twice per month. You need a minimum of 5 individual trading days between requests.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 border-y border-zinc-900 bg-black">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-6 grayscale opacity-50 hover:opacity-100 transition">
+                <span class="text-xs font-bold text-zinc-500 uppercase">Secure Payments:</span>
+                <span class="text-xl font-bold">VISA</span>
+                <span class="text-xl font-bold">MASTERCARD</span>
+                <span class="text-xl font-bold text-blue-500">CRYPTO</span>
+            </div>
+            <div class="flex gap-6 text-xl">
+                <a href="#" class="text-zinc-500 hover:text-gold transition">Twitter</a>
+                <a href="#" class="text-zinc-500 hover:text-gold transition">Discord</a>
+                <a href="#" class="text-zinc-500 hover:text-gold transition">Instagram</a>
+                <a href="#" class="text-zinc-500 hover:text-gold transition">YouTube</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-4xl font-black mb-6 uppercase leading-tight">Need <span class="text-gold">Support?</span></h3>
+                    <p class="text-zinc-400 mb-8">Our team is available 24/5 to assist with account issues, platform setups, or payout inquiries.</p>
+                    <div class="space-y-4">
+                        <p class="text-sm font-bold uppercase"><span class="text-gold mr-2">Email:</span> support@qtf-capital.com</p>
+                        <p class="text-sm font-bold uppercase"><span class="text-gold mr-2">Hours:</span> Mon - Fri / 8AM - 5PM EST</p>
+                    </div>
+                </div>
+                <form action="#" class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full bg-zinc-900 border border-zinc-800 p-3 rounded focus:outline-none focus:border-gold text-sm">
+                    <input type="email" placeholder="Email Address" class="w-full bg-zinc-900 border border-zinc-800 p-3 rounded focus:outline-none focus:border-gold text-sm">
+                    <textarea rows="4" placeholder="Your Message" class="w-full bg-zinc-900 border border-zinc-800 p-3 rounded focus:outline-none focus:border-gold text-sm"></textarea>
+                    <button type="submit" class="w-full py-4 bg-gold text-black font-black uppercase tracking-widest hover:bg-white transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 bg-zinc-950 text-center border-t border-zinc-900">
+        <p class="text-[10px] text-zinc-600 uppercase tracking-widest">© 2026 QTF Capital. Risk Disclosure: Futures trading is not suitable for everyone.</p>
+    </footer>
+
+</body>
+</html>
