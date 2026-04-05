@@ -185,7 +185,130 @@ footer p{color:var(--muted);font-size:12px;line-height:1.9;}
 }
 </style>
 </head>
-<body>
+<div id="page-detail" style="display:none;padding-top:68px;">
+  <div class="detail-hero">
+    <div class="detail-hero-inner">
+      <button class="bc" onclick="goHome()">← Back to Plans</button>
+      <div class="sec-tag">Evaluation Plan</div>
+      <h1 class="sec-title"><span id="det-size"></span> Funded Account</h1>
+      <p style="color:var(--gold);font-family:'Orbitron',sans-serif;font-size:18px;" id="det-price"></p>
+    </div>
+  </div>
+  <div class="dg">
+    <div>
+      <h3 class="sec-title" style="margin-bottom:28px;">Account Rules</h3>
+      <div class="rule-item"><div class="rule-t">Profit Target</div><div class="rule-b">Hit <span id="det-target"></span> to pass evaluation and go live.</div></div>
+      <div class="rule-item"><div class="rule-t">Max Drawdown</div><div class="rule-b">Do not exceed <span id="det-dd"></span> total drawdown.</div></div>
+      <div class="rule-item"><div class="rule-t">Profit Split</div><div class="rule-b"><span id="det-split"></span> of all profits — yours to keep.</div></div>
+      <div class="rule-item"><div class="rule-t">Minimum Trading Days</div><div class="rule-b"><span id="det-days"></span> — trade at your own pace.</div></div>
+    </div>
+    <div>
+      <h3 class="sec-title" style="margin-bottom:28px;">Get Started</h3>
+      <button class="buy-btn">Purchase Evaluation</button>
+    </div>
+  </div>
+</div><body><script>
+// ── HERO CANVAS ANIMATION ──
+const canvas = document.getElementById('hero-canvas');
+const ctx = canvas.getContext('2d');
+let candles = [];
+
+function resize() {
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+function randBetween(a, b) { return a + Math.random() * (b - a); }
+
+function initCandles() {
+  candles = [];
+  const count = 40;
+  const w = canvas.width / count;
+  let price = 200;
+  for (let i = 0; i < count; i++) {
+    const open = price;
+    const close = open + randBetween(-18, 18);
+    const high = Math.max(open, close) + randBetween(2, 10);
+    const low = Math.min(open, close) - randBetween(2, 10);
+    price = close;
+    candles.push({ x: i * w + w / 2, w: w * 0.55, open, close, high, low, alpha: 0 });
+  }
+}
+initCandles();
+
+let frame = 0;
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const h = canvas.height;
+  const prices = candles.map(c => [c.high, c.low]).flat();
+  const minP = Math.min(...prices);
+  const maxP = Math.max(...prices);
+  const range = maxP - minP || 1;
+  const scale = (p) => h - ((p - minP) / range) * h * 0.7 - h * 0.15;
+
+  candles.forEach((c, i) => {
+    if (frame > i * 3) c.alpha = Math.min(1, c.alpha + 0.04);
+    ctx.globalAlpha = c.alpha * 0.7;
+    const bull = c.close >= c.open;
+    const color = bull ? '#22c55e' : '#ef4444';
+    ctx.strokeStyle = color;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(c.x, scale(c.high));
+    ctx.lineTo(c.x, scale(c.low));
+    ctx.stroke();
+    ctx.fillStyle = color;
+    const y1 = scale(Math.max(c.open, c.close));
+    const y2 = scale(Math.min(c.open, c.close));
+    ctx.fillRect(c.x - c.w / 2, y1, c.w, Math.max(2, y2 - y1));
+  });
+
+  ctx.globalAlpha = 1;
+  frame++;
+  if (frame > 300) { frame = 0; initCandles(); }
+  requestAnimationFrame(draw);
+}
+draw();
+
+// ── PLAN DATA ──
+const plans = [
+  { size:'$25K', price:'$97', target:'$1,500', dd:'$1,500', split:'80%', days:'None' },
+  { size:'$50K', price:'$147', target:'$3,000', dd:'$2,000', split:'80%', days:'None', popular:true },
+  { size:'$100K', price:'$247', target:'$6,000', dd:'$3,000', split:'80%', days:'None' },
+  { size:'$150K', price:'$347', target:'$9,000', dd:'$4,500', split:'80%', days:'None' }
+];
+
+// ── PLAN CARD CLICKS ──
+document.querySelectorAll('.pc').forEach((card, i) => {
+  card.style.cursor = 'pointer';
+  card.addEventListener('click', () => {
+    const p = plans[i];
+    if (!p) return;
+    document.getElementById('page-home').style.display = 'none';
+    const det = document.getElementById('page-detail');
+    det.style.display = 'block';
+    document.getElementById('det-size').textContent = p.size;
+    document.getElementById('det-price').textContent = p.price + ' ONE-TIME';
+    document.getElementById('det-target').textContent = p.target;
+    document.getElementById('det-dd').textContent = p.dd;
+    document.getElementById('det-split').textContent = p.split;
+    document.getElementById('det-days').textContent = p.days;
+    window.scrollTo(0, 0);
+  });
+});
+
+function goHome() {
+  document.getElementById('page-home').style.display = 'block';
+  document.getElementById('page-detail').style.display = 'none';
+  window.scrollTo(0, 0);
+}
+
+function scrollTo(id) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+}
+</script>
 
 <!-- ══ NAV ══ -->
 <nav class="nav">
