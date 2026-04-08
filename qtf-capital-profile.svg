@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1c1400"/>
+      <stop offset="50%" stop-color="#0e0e0e"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e070"/>
+      <stop offset="25%" stop-color="#d4a017"/>
+      <stop offset="55%" stop-color="#ffd700"/>
+      <stop offset="80%" stop-color="#b8860b"/>
+      <stop offset="100%" stop-color="#f0c040"/>
+    </linearGradient>
+    <linearGradient id="goldSoft" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7a5200"/>
+      <stop offset="50%" stop-color="#d4a017"/>
+      <stop offset="100%" stop-color="#7a5200"/>
+    </linearGradient>
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#7a5200" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#ffd700" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#7a5200" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="goldGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="textGlow" x="-20%" y="-60%" width="140%" height="220%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="ringGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Outer decorative rings -->
+  <circle cx="250" cy="250" r="248" fill="none" stroke="url(#goldSoft)" stroke-width="1" opacity="0.4"/>
+  <circle cx="250" cy="250" r="244" fill="none" stroke="url(#goldSoft)" stroke-width="0.5" opacity="0.25"/>
+
+  <!-- Main background -->
+  <circle cx="250" cy="250" r="240" fill="url(#bgGrad)"/>
+
+  <!-- Inner border rings -->
+  <circle cx="250" cy="250" r="232" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" filter="url(#ringGlow)" opacity="0.85"/>
+  <circle cx="250" cy="250" r="226" fill="none" stroke="url(#goldSoft)" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- Subtle radiant lines -->
+  <g opacity="0.05" stroke="#ffd700" stroke-width="1">
+    <line x1="250" y1="250" x2="250" y2="20"/>
+    <line x1="250" y1="250" x2="250" y2="480"/>
+    <line x1="250" y1="250" x2="20" y2="250"/>
+    <line x1="250" y1="250" x2="480" y2="250"/>
+    <line x1="250" y1="250" x2="90" y2="90"/>
+    <line x1="250" y1="250" x2="410" y2="410"/>
+    <line x1="250" y1="250" x2="410" y2="90"/>
+    <line x1="250" y1="250" x2="90" y2="410"/>
+  </g>
+
+  <!-- Horizontal dividers -->
+  <line x1="60" y1="155" x2="440" y2="155" stroke="url(#goldSoft)" stroke-width="0.6" opacity="0.5"/>
+  <line x1="60" y1="340" x2="440" y2="340" stroke="url(#goldSoft)" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- Vertical side accents -->
+  <line x1="60" y1="133" x2="60" y2="362" stroke="url(#goldLine)" stroke-width="0.8" opacity="0.6"/>
+  <line x1="440" y1="133" x2="440" y2="362" stroke="url(#goldLine)" stroke-width="0.8" opacity="0.6"/>
+
+  <!-- Corner brackets -->
+  <path d="M75,137 L60,137 L60,153" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+  <path d="M425,137 L440,137 L440,153" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+  <path d="M75,358 L60,358 L60,342" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+  <path d="M425,358 L440,358 L440,342" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- Diamond ornaments on ring -->
+  <g fill="url(#goldGrad)" filter="url(#goldGlow)">
+    <polygon points="250,20 256,31 250,42 244,31"/>
+    <polygon points="250,458 256,469 250,480 244,469"/>
+    <polygon points="20,250 31,244 42,250 31,256"/>
+    <polygon points="458,250 469,244 480,250 469,256"/>
+  </g>
+
+  <!-- 45-degree dots -->
+  <g fill="url(#goldGrad)" opacity="0.6">
+    <circle cx="90" cy="90" r="2.5"/>
+    <circle cx="410" cy="90" r="2.5"/>
+    <circle cx="90" cy="410" r="2.5"/>
+    <circle cx="410" cy="410" r="2.5"/>
+  </g>
+
+  <!-- ESTABLISHED 2026 -->
+  <text x="250" y="108" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="9.5" letter-spacing="5" fill="#b8860b" opacity="0.85">ESTABLISHED · 2026</text>
+  <line x1="185" y1="116" x2="315" y2="116" stroke="url(#goldSoft)" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- Small top ornament replacing the Q logo -->
+  <line x1="210" y1="138" x2="290" y2="138" stroke="url(#goldGrad)" stroke-width="1" opacity="0.4"/>
+  <polygon points="250,128 253,135 250,142 247,135" fill="url(#goldGrad)" opacity="0.35"/>
+
+  <!-- QTF main text — pushed up slightly now Q logo removed -->
+  <text x="250" y="232" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="58" font-weight="bold" letter-spacing="6"
+        fill="url(#goldGrad)" filter="url(#textGlow)">QTF</text>
+
+  <text x="250" y="277" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="30" font-weight="bold" letter-spacing="14"
+        fill="url(#goldGrad)" filter="url(#textGlow)">CAPITAL</text>
+
+  <!-- Divider under CAPITAL -->
+  <line x1="120" y1="290" x2="380" y2="290" stroke="url(#goldGrad)" stroke-width="1.2" opacity="0.65"/>
+  <line x1="170" y1="295" x2="330" y2="295" stroke="url(#goldSoft)" stroke-width="0.5" opacity="0.4"/>
+
+  <!-- FUTURES PROP TRADING -->
+  <text x="250" y="316" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="10" letter-spacing="5"
+        fill="#c8960c" opacity="0.9">FUTURES · PROP TRADING</text>
+
+  <!-- Trust tagline -->
+  <circle cx="88" cy="363" r="1.8" fill="url(#goldGrad)" opacity="0.55"/>
+  <circle cx="412" cy="363" r="1.8" fill="url(#goldGrad)" opacity="0.55"/>
+  <text x="250" y="367" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="12" letter-spacing="3" font-style="italic"
+        fill="#d4a017" opacity="0.95">Trusted. Disciplined. Elite.</text>
+
+  <!-- Second trust line -->
+  <text x="250" y="390" text-anchor="middle"
+        font-family="Georgia, 'Times New Roman', serif"
+        font-size="8.5" letter-spacing="2.5"
+        fill="#9a7010" opacity="0.8">WHERE PRECISION MEETS PERFORMANCE</text>
+
+  <!-- Bottom ornament -->
+  <line x1="155" y1="403" x2="345" y2="403" stroke="url(#goldSoft)" stroke-width="0.7" opacity="0.4"/>
+  <polygon points="250,412 254,420 250,428 246,420" fill="url(#goldGrad)" opacity="0.45" filter="url(#goldGlow)"/>
+</svg>
